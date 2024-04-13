@@ -31,7 +31,6 @@ This is a full-stack implementation of a login system using JWT.
 
 ## TODO
 
-- Create docker file for frontend
 - Install basic Spring Boot configuration for backend
 - Create docker file for backend
 - Create docker file for database
