@@ -28,11 +28,3 @@ This is a full-stack implementation of a login system using JWT.
 ## Backend API
 
 - ...
-
-## TODO
-
-- Create docker file for backend
-- Create docker file for database
-- Write docker-compose.yml
-- Implementation backend with JWT
-- Implementation frontend
