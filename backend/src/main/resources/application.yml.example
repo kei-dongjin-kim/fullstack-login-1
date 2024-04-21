@@ -19,7 +19,7 @@ spring:
     defer-datasource-initialization: true
 jwt:
   header: Authorization
-  secret: 2eK9VHHVrD4j23j9e0epUW7dL6On4fa8wPxUzbUqjDY=
+  secret: 
   token-validity-in-seconds: 86400 # 1dayin
 logging:
   level:
