@@ -5,6 +5,9 @@ spring:
     url: jdbc:postgresql://db:5432/postgres
     username: postgres
     password: postgres
+  sql:
+    init:
+      mode: always
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
@@ -14,3 +17,10 @@ spring:
         format_sql: true
         show_sql: true
     defer-datasource-initialization: true
+jwt:
+  header: Authorization
+  secret: 2eK9VHHVrD4j23j9e0epUW7dL6On4fa8wPxUzbUqjDY=
+  token-validity-in-seconds: 86400 # 1dayin
+logging:
+  level:
+    com.example: DEBUG
