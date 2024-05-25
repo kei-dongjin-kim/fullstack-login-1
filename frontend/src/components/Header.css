@@ -4,6 +4,9 @@
   width: 100%;
   z-index: 100; /* Ensure the header is above other elements */
   background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -13,8 +16,25 @@
   font-size: 20px;
 }
 
-.loginStatus {
-  float: right;
+.login-status {
   color: white;
   padding: 10px;
+}
+
+.nickname {
+  color: white;
+  padding: 10px;
+}
+
+.loginout-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }

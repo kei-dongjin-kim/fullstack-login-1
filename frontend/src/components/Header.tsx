@@ -9,16 +9,19 @@ const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="logo">fullstack-login-1</div>
-      <div className="loginStatus">
+      <div className="login-status">
         {user ? (
           <div className="user-info">
-            <span className="username">{user.nickname}</span>
-            <button className="logout-button" onClick={logout}>
+            <span className="nickname">{user.nickname}</span>
+            <button className="loginout-button" onClick={logout}>
               Logout
             </button>
           </div>
         ) : (
-          <button className="login-button" onClick={() => navigate("/login")}>
+          <button
+            className="loginout-button"
+            onClick={() => navigate("/login")}
+          >
             Login
           </button>
         )}
