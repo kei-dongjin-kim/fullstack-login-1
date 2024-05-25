@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, KeyboardEvent, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import "./LoginPage.css";
 
-const LoginPage = () => {
+interface Auth {
+  login: (email: string, password: string) => Promise<void>;
+}
+
+const LoginPage: FC = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { login } = useAuth() as Auth;
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter") {
+      handleLogin();
+    }
+  };
 
   const handleLogin = async () => {
     try {
@@ -19,7 +29,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login">
+    <div className="login" onKeyDown={handleKeyDown}>
       <div className="form">
         <span>Login</span>
 
