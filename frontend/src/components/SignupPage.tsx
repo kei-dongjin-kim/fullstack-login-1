@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 import "./SignupPage.css";
 
 const SignupPage = () => {
   const navigate = useNavigate();
-  // const [signup, { data, loading, error }] = useSignupMutation();
+  const { signup } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    //   await signup({ variables: { email, password, name } });
+    try {
+      await signup(email, password, nickname);
+      setEmail("");
+      setPassword("");
+      setNickname("");
+      navigate("/login");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

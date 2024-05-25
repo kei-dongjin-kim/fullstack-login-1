@@ -1,23 +1,18 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 import "./LoginPage.css";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:8080/api/login", {
-        email,
-        password,
-      });
-      // Save the token to local storage (or session storage or cookies)
-      localStorage.setItem("token", res.data.token);
-
-      // navigate("/");
+      await login(email, password);
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
