@@ -93,7 +93,7 @@ public class JwtTokenProvider implements InitializingBean {
     try {
       Jwts
         .parser()
-        .verifyWith((PublicKey) key)
+        .verifyWith((SecretKey) key)
         .build()
         .parseSignedClaims(token);
       return true;
